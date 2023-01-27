@@ -27,7 +27,6 @@ def parse_post(post:str) -> Dict:
             tags = processed_post['metadata']['tags'].split(',')
         else:
             tags = [processed_post['metadata']['tags']]
-        print (tags)
         title = processed_post['metadata']['title']
         week = processed_post['metadata']['week']
         slug_text = f'Week {week}:{title}'

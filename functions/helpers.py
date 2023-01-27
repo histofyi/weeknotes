@@ -15,3 +15,6 @@ def slugify(string:str) -> str:
             string = string.replace(replace_me, slug_char)
     return string.lower()
 
+
+def build_year_month(year, month):
+    return int(f'{year}{str(month).zfill(2)}')
