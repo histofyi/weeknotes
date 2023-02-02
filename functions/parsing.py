@@ -5,6 +5,12 @@ import toml
 
 from functions.helpers import slugify
 
+def apply_classes(html:str) -> str:
+    if '<h3>' in html:
+        html = html.replace('<h3>', '<h3 class="heading-small">') 
+    return html
+
+
 def parse_post(post:str) -> Dict:
     """
     This function takes a post, parses the TOML formatted metadata and marks up the Markdown format post
@@ -33,7 +39,7 @@ def parse_post(post:str) -> Dict:
         processed_post['metadata']['slug'] = slugify(slug_text)
         processed_post['metadata']['tags'] = [slugify(tag.strip()) for tag in tags]
         
-        processed_post['content'] = markdown.markdown(components[1])
+        processed_post['content'] = apply_classes(markdown.markdown(components[1]))
     else:
         print ('ERROR')
     return processed_post
