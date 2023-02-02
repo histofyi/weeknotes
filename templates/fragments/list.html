@@ -1,0 +1,6 @@
+{% for post in posts %}
+  {% if loop.first %}
+    {% set first = True %}
+  {% endif %}
+    {% include "fragments/list_view.html" %}
+{% endfor %}
