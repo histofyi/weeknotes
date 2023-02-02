@@ -6,6 +6,7 @@ import json
 from functions.parsing import parse_post
 from functions.helpers import build_year_month
 
+
 def build_index_handler() -> Dict:
     """
     This function indexes all of the posts in the content/posts folder and indexes them into a dictionary and writes them to disk
