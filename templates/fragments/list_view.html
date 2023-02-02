@@ -1,0 +1,27 @@
+
+
+<section class="">
+    <div class="grid-container">
+      <div class="column-full-width">
+        <div class="inner">
+            <small>{{post.metadata.fulldate|humanize_fulldate}}</small>
+            
+            <h2 class="heading-medium vertical-spacing-bottom-0-5"><a href="/weeknotes/posts/{{post.metadata.slug}}">Week {{post.metadata.week}} : {{post.metadata.title}}</a></h2>
+                
+            <div class="vertical-spacing-bottom-0-25">
+            {{post.content|truncate_list_posts|safe}}
+            <small>
+                <a href="/weeknotes/posts/{{post.metadata.slug}}">Read more...</a>
+            </small>
+            </div>
+            <div class="small vertical-spacing-bottom">
+                <smaller>
+                    tags : 
+                {% for tag in post.metadata.tags %}
+                    <span class="tag_label label"><a href="/weeknotes/tags/{{tag}}" class="label_link">{{tag|deslugify}}</a></span>
+                {% endfor %}
+                </smaller>
+            </div>
+        </div>
+    </div>
+</section>

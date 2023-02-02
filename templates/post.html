@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+
+{% block title %} Week {{post.metadata.week}} : {{post.metadata.title}} {% endblock %}
+
+{% block main %}
+<section class="vertical-spacing-top">
+  <div class="grid-container">
+    <div class="column-two-thirds">
+      <div class="inner">
+        <small>{{post.metadata.fulldate|humanize_fulldate}}</small>
+        <h1 class="heading-large vertical-spacing-bottom">Week {{post.metadata.week}} : {{post.metadata.title}}</h1>
+        <p>
+            {{post.content|safe}}
+        </p>
+      </div>
+    </div>
+    <div class="column-one-third">
+        <div class="vertical-spacing-bottom-0-25">Tags</div>
+        <small>
+        {% for tag in post.metadata.tags %}
+            <span class="tag_label label"><a href="/weeknotes/tags/{{tag}}" class="label_link">{{tag|deslugify}}</a></span>
+        {% endfor %}
+        </small>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

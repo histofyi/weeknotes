@@ -1,0 +1,10 @@
+{
+    "production": {
+        "app_function": "app.app",
+        "aws_region": "eu-west-2",
+        "profile_name": "default",
+        "project_name": "weeknotes",
+        "runtime": "python3.9",
+        "s3_bucket": "weeknotes"
+    }
+}
