@@ -27,8 +27,10 @@
                 </smaller>
             </div>
             {% if first %}
-            <hr class="vertical-spacing-bottom">
-            <h3 class="heading-medium">Older posts</h3>
+            {% if not facet %}
+              <hr class="vertical-spacing-bottom">
+              <h3 class="heading-medium">Older posts</h3>
+            {% endif %}
             {% endif %}
         </div>
     </div>

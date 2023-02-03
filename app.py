@@ -135,13 +135,13 @@ def deslugify(text):
 @app.template_filter()
 def humanize_fulldate(date):
     ordinal_char = '$'
-    datestring = date.strftime(f'%B %d{ordinal_char} %Y')
-    day_of_month = str(date.strftime('%d'))
-    if day_of_month in ['1','11','21','31']:
+    datestring = date.strftime(f'%B %-d{ordinal_char} %Y')
+    day_of_month = int(date.strftime('%d'))
+    if day_of_month in [1,11,21,31]:
         ordinal = 'st'
-    elif day_of_month in ['2','22']:
+    elif day_of_month in [2,22]:
         ordinal = 'nd'
-    elif day_of_month in ['3','23']:
+    elif day_of_month in [3,23]:
         ordinal = 'rd'
     else:
         ordinal = 'th'
