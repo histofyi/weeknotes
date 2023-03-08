@@ -20,7 +20,7 @@ The first tool that I love to use is a [problem statement](https://digitoolkit.w
 **Then** {what problem arises}  
 **This means** {what are the effects of the problem}  
 
-For example# 
+For example: 
 
 **When** people or tools  
 **Are** trying to compare two MHC structures from species/loci with insertions/deletions  
